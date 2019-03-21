@@ -1,0 +1,27 @@
+{
+    "token": "NTU3Mjc5ODI5ODA0NzExOTQx.D3F-0A.JiOYipNr539R2GAgUej7vNiaLeg",
+    "prefix": "=",
+    "commandhelp": "=help",
+    "invitebot": "=invite",
+    "rainbowdelay": 10,
+    "rainbowcommand": "rainbow",
+    "rainbowstop": "stop",
+    "rainbowrole": [
+        "#9400D3",
+        "#4B0082",
+        "#0000FF",
+        "#00FF00",
+        "#FFFF00",
+        "#FF7F00",
+        "#FF0000"
+    ],
+    "messageresponse": {
+        "missingperm": "I need permission 'MANAGE_ROLES' to execute this action.",
+        "invitemessage": "приласить бота: https://discordapp.com/oauth2/authorize?client_id=557279829804711941&scope=bot&permissions=2146958591",
+        "messagehelp": "=rainbow запустить изменение роли, =stop отключить изменение роли,",
+        "success": "успех!:white_check_mark: авто-изменение успешно включено",
+        "rainbowstop": "успех!:white_check_mark: авто-изменение успешно отключено",
+        "norulesrainbow": "ошибка! я не могу покрасить эту роль",
+        "rolenotfound": "ошибка! вы не выбрали роль"
+        }
+    }
