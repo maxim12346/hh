@@ -1,12 +1,12 @@
-
 const Discord = require('discord.js');
 const client = new Discord.Client();
 
 client.on('ready', () => {
-bot.on('ready', async => {
-console.log("Rainbow bot is ready!" + "\n" + bot.user.tag + "\n" + "Server Count: "  + bot.guilds.size + "\n" + "Cached users: " + bot.users.size + "\n" + "Enjoy!")
+    console.log('I am ready!');
 });
-bot.on('message', message => {
+
+client.on('message', message => {
+});
     let messageArray = message.content.split(" ");
     let command = messageArray[0];
     let args = messageArray.slice(1);
@@ -60,9 +60,6 @@ bot.on('message', message => {
                          
     //   message.channel.send(settings.messageresponse.rainbowstop).catch(err=> message.channel.send("No response"));
     //                      }
-            //});
-           
-                       
-                       
-//});
+            //});           
+// THIS  MUST  BE  THIS  WAY
 client.login(process.env.BOT_TOKEN);
