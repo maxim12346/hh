@@ -63,4 +63,4 @@ bot.on('message', message => {
                        
                        
 //});
-bot.login(settings.token).catch(err=> console.log("Incorrect Token was provided")
+bot.login(settings.token).catch(err=> console.log("Incorrect Token was provided"))
