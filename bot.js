@@ -1,18 +1,10 @@
-const Discord = require('discord.js');
-const client = new Discord.Client();
-
-client.on('ready', () => {
-    console.log('I am ready!');
+const Discord = require("discord.js") 
+const settings = require("./your_settings.json")
+const bot = new Discord.Client()
+bot.on('ready', async => {
+console.log("Rainbow bot is ready!" + "\n" + bot.user.tag + "\n" + "Server Count: "  + bot.guilds.size + "\n" + "Cached users: " + bot.users.size + "\n" + "Enjoy!")
 });
-
-client.on('message', message => {
-    if (message.content === 'ping') {
-    	message.reply('pong');
-  	}
-});
-
-// THIS  MUST  BE  THIS  WAY
-client.login(process.env.BOT_TOKEN);
+bot.on('message', message => {
     let messageArray = message.content.split(" ");
     let command = messageArray[0];
     let args = messageArray.slice(1);
@@ -71,4 +63,4 @@ client.login(process.env.BOT_TOKEN);
                        
                        
 //});
-bot.login(settings.token).catch(err=> console.log("Incorrect Token was provided"))
+bot.login(settings.token).catch(err=> console.log("Incorrect Token was provided")
