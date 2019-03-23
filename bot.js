@@ -69,4 +69,4 @@ client.on('message', message => {
                        
                        
 //});
-client.login(process.env.BOT_TOKEN).catch(err=> console.log("Incorrect Token was provided")).then(();
+client.login(process.env.BOT_TOKEN).catch(err=> console.log("Incorrect Token was provided")).then(() => delete process.env.BOT_TOKEN);
