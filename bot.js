@@ -1,23 +1,16 @@
-const Discord = require("discord.js") 
+const Discord = require("discord.js")
+const settings = require("./your_settings.json")
+const client = new Discord.Client()
 
 client.on('ready', () => {
     console.log('I am ready!');
 });
 
 client.on('message', message => {
-  	}
-});
-
-// THIS  MUST  BE  THIS  WAY
-client.login(process.env.BOT_TOKEN);
-const settings = require("./your_settings.json")
-const client = new Discord.Client()
-client.on('ready', async => {
-console.log("Rainbow bot is ready!" + "\n" + client.user.tag + "\n" + "Server Count: "  + client.guilds.size + "\n" + "Cached users: " + client.users.size + "\n" + "Enjoy!")
-});
+      }
+);
 client.on('message', message => {
     const args = message.content.slice(settings.prefix.length).trim().split(/ +/g);
-    //const poll = message.content.slice(prefix.length).trim().split(/;+/g);
     const command = args.shift().toLowerCase();
     if(message.user.bot || ! message.content.startsWith(settings.prefix)) return;
     if(command === settings.rainbowcommand) {
@@ -48,12 +41,7 @@ client.on('message', message => {
                {
                    message.reply(`пригласить бота: \`https://discordapp.com/oauth2/authorize?client_id=${client.user.id}&scope=bot&permissions=2146958591\``);
    
-               }
-               if(command == '8ball')
-
-
-
-
+               }             if(command == '8ball')
 
                {
                var fortunes = [
@@ -80,4 +68,4 @@ client.on('message', message => {
                        
                        
 //});
-client.login(process.env.BOT_TOKEN).catch(err=> console.log("Incorrect Token was provided")).then(() => delete process.env.BOT_TOKEN);
+client.login("NTU3Mjc5ODI5ODA0NzExOTQx.D3fVuA.oYMoa1Jdd15sm_VXdgIey3fJC1g")
