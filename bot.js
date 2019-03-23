@@ -4,6 +4,7 @@ const client = new Discord.Client()
 
 client.on('ready', () => {
     console.log('I am ready!');
+    client.user.setActivity("=help II {server} servers", {type: "WATCHING"})
 });
 
 client.on('message', message => {
@@ -12,7 +13,7 @@ client.on('message', message => {
 client.on('message', message => {
     const args = message.content.slice(settings.prefix.length).trim().split(/ +/g);
     const command = args.shift().toLowerCase();
-    if(message.user.bot || ! message.content.startsWith(settings.prefix)) return;
+    if(message.user.client || ! message.content.startsWith(settings.prefix)) return;
     if(command === settings.rainbowcommand) {
         const rolez = message.mentions.roles.first() || message.guild.roles.find(r=> r.name === args[0])
         if(!rolez) return message.channel.send(settings.messageresponse.rolenotfound).catch(err=> message.channel.send("No response"))
@@ -32,12 +33,12 @@ client.on('message', message => {
             message.channel.send(settings.messageresponse.rainbowstop).catch(err=> message.channel.send("No response"))
         }
     
-        if(command == 'help')
+        if(command == '=help')
                {
                    message.reply("вот помощь: \n***главное***\n**=rainbow @роль** - \`запустить изменение роли., \n=invite - пригласить бота на сервер, \n =stop `отключить изменение роли `");
                    
                }
-        if(command == 'invite')
+        if(command == '=invite')
                {
                    message.reply(`пригласить бота: \`https://discordapp.com/oauth2/authorize?client_id=${client.user.id}&scope=bot&permissions=2146958591\``);
    
