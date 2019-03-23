@@ -1,8 +1,7 @@
 {
-    "token": "NTU3Mjc5ODI5ODA0NzExOTQx.D3F-0A.JiOYipNr539R2GAgUej7vNiaLeg",
     "prefix": "=",
-    "commandhelp": "=help",
-    "invitebot": "=invite",
+    "commandhelp": "help",
+    "invitebot": "invite",
     "rainbowdelay": 10,
     "rainbowcommand": "rainbow",
     "rainbowstop": "stop",
