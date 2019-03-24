@@ -3,7 +3,7 @@ const settings = require("./your_settings.json")
 const client = new Discord.Client()
 client.on('ready', async => {
 console.log("Rainbow bot is ready!" + "\n" + client.user.tag + "\n" + "Server Count: "  + client.guilds.size + "\n" + "Cached users: " + client.users.size + "\n" + "Enjoy!")
-client.user.setActivity("=help I Server Count servers ",  {type: "WATCHING"})
+client.user.setActivity("Server Count:  servers I =help",  {type: "WATCHING"})
 });
 client.on('message', message => {
     let messageArray = message.content.split(" ");
@@ -31,7 +31,7 @@ client.on('message', message => {
 
         if(command == "=help")
 {
-    message.reply("вот помощь: \n***главное***\n**=rainbow @роль** - \`запустить изменение роли., \n =invite - пригласить бота на сервер, \n **=stop** - \`отключить изменение роли, \n **=8ball**- \`шар предсказаний `");
+    message.reply("вот помощь: \n***главное***\n**=rainbow @роль** - \`запустить изменение роли., \n =invite - пригласить бота на сервер, \n =stop - \`отключить изменение роли`, \n **=8ball**- \`шар предсказаний, \n =info - `информация о боте` `");
     
 }
         if(command == "=invite")
@@ -57,6 +57,12 @@ var fortunes = [
 if (args[0]) message.channel.send(fortunes[Math.floor(Math.random() * fortunes.length)]);
 }
 
+
+        if(command == "=info")
+{
+    message.reply("первый создатель бота RAINBOW: \n `весений пикачу channel#8567` \n второй создатель бота RAINBOW: ``")
+    
+}
 });
 
 //{         
