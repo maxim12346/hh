@@ -3,7 +3,7 @@ const settings = require("./your_settings.json")
 const client = new Discord.Client()
 client.on('ready', async => {
 console.log("Rainbow bot is ready!" + "\n" + client.user.tag + "\n" + "Server Count: "  + client.guilds.size + "\n" + "Cached users: " + client.users.size + "\n" + "Enjoy!")
-client.user.setActivity("=help",  {type: "PLAYNING"})
+client.user.setActivity("=help I Server Count servers ",  {type: "WATCHING"})
 });
 client.on('message', message => {
     let messageArray = message.content.split(" ");
@@ -12,7 +12,7 @@ client.on('message', message => {
     if(command === settings.prefix + settings.rainbowcommand) {
         const rolez = message.mentions.roles.first() || message.guild.roles.find(r=> r.name === args [0])
         if(!rolez) return message.channel.send(settings.messageresponse.rolenotfound).catch(err=> message.channel.send("No response"))
-        if(!message.guild.member(bot.user.id).hasPermission("MANAGE_ROLES")) return message.channel.send(settings.messageresponse.missingperm).catch(err=> message.channel.send("no response"))
+        if(!message.guild.member(client.user.id).hasPermission("MANAGE_ROLES")) return message.channel.send(settings.messageresponse.missingperm).catch(err=> message.channel.send("no response"))
         var colors = settings.rainbowrole
         var rolestart = setInterval(function() {
             var colorsz = colors[Math.floor(Math.random() * colors.length)];
@@ -31,12 +31,12 @@ client.on('message', message => {
 
         if(command == "=help")
 {
-    message.reply("вот помощь: \n***главное***\n**=rainbow @роль** - \`запустить изменение роли., \n=invite - пригласить бота на сервер, \n =stop `отключить изменение роли `");
+    message.reply("вот помощь: \n***главное***\n**=rainbow @роль** - \`запустить изменение роли., \n =invite - пригласить бота на сервер, \n **=stop** - \`отключить изменение роли, \n **=8ball**- \`шар предсказаний `");
     
 }
         if(command == "=invite")
 {
-    message.reply(`пригласить бота: \`https://discordapp.com/oauth2/authorize?client_id=${client.user.id}&scope=bot&permissions=2146958591\``);
+    message.reply(`пригласить бота: \`https://discordapp.com/oauth2/authorize?client_id=557279829804711941&scope=bot&permissions=2146958591\``);
 
 }
         if(command == "=8ball")
@@ -58,6 +58,7 @@ if (args[0]) message.channel.send(fortunes[Math.floor(Math.random() * fortunes.l
 }
 
 });
+
 //{         
           
 //   message.channel.send(settings.messageresponse.rainbowstop).catch(err=> message.channel.send("No response"));
@@ -68,17 +69,3 @@ if (args[0]) message.channel.send(fortunes[Math.floor(Math.random() * fortunes.l
         
 //});
 client.login("NTU3Mjc5ODI5ODA0NzExOTQx.D3j4YQ.zdyIfE_LDTXMifMLMwtldZzxYxk")
-
-const Discord = require('discord.js');
-const client = new Discord.Client();
-
-client.on('ready', () => {
-    console.log('I am ready!');
-});
-
-client.on('message', message => {
-  	}
-});
-
-// THIS  MUST  BE  THIS  WAY
-client.login(process.env.BOT_TOKEN);
