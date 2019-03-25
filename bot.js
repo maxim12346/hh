@@ -1,9 +1,15 @@
-const Discord = require("discord.js") 
-const settings = require("./your_settings.json")
-const client = new Discord.Client()
-client.on('ready', async => {
-console.log("Rainbow bot is ready!" + "\n" + client.user.tag + "\n" + "Server Count: "  + client.guilds.size + "\n" + "Cached users: " + client.users.size + "\n" + "Enjoy!")
-client.user.setActivity("Server Count:  servers I =help",  {type: "WATCHING"})
+const Discord = require('discord.js');
+const client = new Discord.Client();
+
+client.on('ready', () => {
+    console.log('I am ready!');
+});
+
+client.on('message', message => {
+    if (message.content === 'ping') {
+    	message.reply('pong');
+  	}
+    client.user.setActivity("Server Count:  servers I =help",  {type: "WATCHING"})
 });
 client.on('message', message => {
     let messageArray = message.content.split(" ");
@@ -74,4 +80,7 @@ if (args[0]) message.channel.send(fortunes[Math.floor(Math.random() * fortunes.l
         
         
 //});
-client.login("NTU3Mjc5ODI5ODA0NzExOTQx.D3j4YQ.zdyIfE_LDTXMifMLMwtldZzxYxk")
+});
+
+// THIS  MUST  BE  THIS  WAY
+client.login(process.env.BOT_TOKEN);
