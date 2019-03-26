@@ -1,9 +1,11 @@
 {
-    "prefix": "=",
+    "token": "NTU3Mjc5ODI5ODA0NzExOTQx.D3vyZA.CCuT1WMbUMXZ0mU0YPR6BaI7bBs",
+    "prefix": "+",
     "commandhelp": "help",
     "invitebot": "invite",
     "rainbowdelay": 10,
     "rainbowcommand": "rainbow",
+    
     "rainbowstop": "stop",
     "rainbowrole": [
         "#9400D3",
